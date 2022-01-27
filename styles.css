@@ -1,0 +1,328 @@
+
+:root {
+  --blue-darker: hsl(226, 43%, 10%);
+  --blue-dark: hsl(235, 46%, 20%);
+  --blue-light: hsl(235, 45%, 61%);
+  --blue-lighter: hsl(236, 100%, 87%);
+  --blue-primary: hsl(246, 80%, 60%);
+
+  --blue-card-hover: hsl(236, 41%, 35%);
+  
+  --bg-work: hsl(15, 100%, 70%);
+  --bg-play: hsl(195, 74%, 62%);
+  --bg-study: hsl(348, 100%, 68%);
+  --bg-execise: hsl(145, 58%, 55%);
+  --bg-social: hsl(264, 64%, 52%);
+  --bg-self-care: hsl(43, 84%, 65%);
+
+  --border-radius: 10px;
+  --padding: 16px;
+  --card-bg-height: 8rem;
+
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-bold: 500;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: 'Rubik', sans-serif;
+}
+
+html { font-size: 62.5%; }
+
+body { 
+  background-color: var(--blue-darker);
+  box-sizing: border-box; 
+}
+
+main { 
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  padding: var(--padding);
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;  
+  gap: var(--padding);
+  min-width: 35rem;
+  min-height: 40rem;
+}
+
+/* 
+
+Styling for the dashbaord profile card starts here
+
+*/
+
+.dashboard__profile { 
+  background-color: var(--blue-dark);
+  border-radius: var(--border-radius);
+
+  overflow: hidden;
+}
+
+.dashboard__profile .dashboard__profile-header {
+  display: flex;
+  flex-grow: 3; 
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: var(--padding);
+  padding: var(--padding);
+  min-height: 12rem;
+
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  background-color: var(--blue-primary);
+}
+
+.dashboard__profile-header .dashboard__profile-pic {
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+}
+
+.dashboard__profile-info .dashboard__profile-helper-text {
+  font-size: 1.4rem;
+  font-weight: var(--weight-light);
+  color: var(--blue-lighter);
+}
+
+.dashboard__profile-info .dashboard__profile-name {
+  font-size: 2.4rem;
+  font-weight: var(--weight-normal);
+  color: white;
+}
+
+.dashboard__profile .dashboard__tracking-options {
+  display: flex;
+  flex-grow: 2;
+  align-items: center;
+  justify-content: space-around;
+  padding: var(--padding);
+
+  list-style-type: none;
+}
+
+.dashboard__profile .dashboard__options {
+  color: var(--blue-light);
+  font-size: 1.6rem;
+
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+  transition: color 0.12s ease-in;
+}
+
+.dashboard__profile .dashboard__options:hover,
+.dashboard__profile .dashboard__options:focus {
+  color: white;
+}
+
+.dashboard__profile .dashboard__options--active {
+  color: white;
+}
+
+/* 
+
+Styling for the statistics cards starts here
+
+*/
+
+.dashboard .dashboard__stats-container {
+  display: grid;
+  gap: var(--padding);
+  flex-grow: 3;
+  max-width: 100%;
+}
+
+.dashboard__stats-container .dashboard__stats-card {
+  position: relative;
+  padding-top: calc(var(--card-bg-height) / 2);
+  transform-style: preserve-3d;
+
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  border-radius: var(--border-radius);
+  background-color: var(--blue-dark);
+
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color 0.12s ease-in;
+}
+
+.dashboard__stats-container .dashboard__stats-card:hover,
+.dashboard__stats-container .dashboard__stats-card:focus,
+.dashboard__stats-container .dashboard__stats-card:hover .dashboard__stats-header,
+.dashboard__stats-container .dashboard__stats-card:focus .dashboard__stats-header {
+  background-color: var(--blue-card-hover);
+}
+
+.dashboard__stats-card .dashboard__stats-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateZ(-1rem);
+
+  width: 100%;
+  min-height: var(--card-bg-height);
+  
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+/* 
+
+Background color for each stat cards' background div
+
+*/
+
+.dashboard__stats-card[data-stat-card="work"] .dashboard__stats-bg { background-color: var(--bg-work); }
+.dashboard__stats-card[data-stat-card="play"] .dashboard__stats-bg { background-color: var(--bg-play); }
+.dashboard__stats-card[data-stat-card="study"] .dashboard__stats-bg { background-color: var(--bg-study); }
+.dashboard__stats-card[data-stat-card="exercise"] .dashboard__stats-bg { background-color: var(--bg-execise); }
+.dashboard__stats-card[data-stat-card="social"] .dashboard__stats-bg { background-color: var(--bg-social); }
+.dashboard__stats-card[data-stat-card="selfCare"] .dashboard__stats-bg { background-color: var(--bg-self-care); }
+
+.dashboard__stats-card .dashboard__stats-bg > img {
+  position: inherit;
+  top: 0;
+  right: 0;
+  transform: translate(-5%,-14%)
+             scale(0.85);
+}
+
+.dashboard__stats-card .dashboard__stats-header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding);
+
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  background-color: var(--blue-dark);
+
+  transition: background-color 0.12s ease-in;
+}
+
+.dashboard__stats-header .dashboard__stats-name {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: var(--weight-bold);
+}
+
+.dashboard__stats-header .dashboard__stats-options {
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.dashboard__stats-header .dashboard__stats-options:hover,
+.dashboard__stats-header .dashboard__stats-options:focus {
+  filter: invert(98%) sepia(0%) saturate(5286%) hue-rotate(179deg) brightness(117%) contrast(100%);
+}
+
+.dashboard__stats-card .dashboard__stats-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: var(--padding);
+  padding-bottom: calc(var(--padding) * 2);
+  padding-left: var(--padding);
+}
+
+.dashboard__stats-content .dashboard__stats-time {
+  font-size: 2.4rem;
+  color: white;
+  font-weight: var(--weight-normal);
+}
+
+.dashboard__stats-content .dashboard__stats-prev-time {
+  color: var(--blue-light);
+  font-size: 1.4rem;
+  font-weight: var(--weight-normal);
+}
+
+/* 
+
+Various media queries for the dashboard components and its children,
+inlcudes height, font-sizes, and display properties
+
+*/
+
+@media screen and (min-width: 576px) {
+  .dashboard .dashboard__profile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard__profile .dashboard__profile-header {
+    border-bottom-right-radius: unset;
+  }
+
+  .dashboard__profile .dashboard__tracking-options {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard .dashboard__stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 899px) {
+  .dashboard {
+    flex-direction: row;
+    align-items: unset;
+    min-width: 85rem;
+  }
+
+  .dashboard .dashboard__profile {
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+  }
+
+  .dashboard__profile .dashboard__profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3.2rem;
+    padding-bottom: calc(var(--padding) * 2);
+
+    border-bottom-right-radius: var(--border-radius);
+  }
+
+  .dashboard__profile-info .dashboard__profile-name {
+    font-size: 3.2rem;
+  }
+
+  .dashboard .dashboard__stats-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .dashboard__stats-card .dashboard__stats-content {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-start;
+
+    padding-top: 1.6rem;
+  }
+
+  .dashboard__stats-content .dashboard__stats-time {
+    font-size: 3.2rem;
+  }
+}

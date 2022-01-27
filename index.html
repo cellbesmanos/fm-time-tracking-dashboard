@@ -1,0 +1,178 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Time Tracking Dashboard | Frontend Mentor</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">  
+
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <main>
+      <article class="dashboard">
+        <section class="dashboard__profile">
+          <header class="dashboard__profile-header">
+            <img class="dashboard__profile-pic" src="assets/images/image-jeremy.png" alt="User Profile Picture">
+
+            <div class="dashboard__profile-info">
+              <p class="dashboard__profile-helper-text">Report for</p>
+
+              <h1 class="dashboard__profile-name">Jeremy Robson</h1>
+            </div>
+          </header>
+
+          <ul class="dashboard__tracking-options">
+            <li>
+              <button class="dashboard__options" data-opt="daily">Daily</button>
+            </li>
+            <li>
+              <button class="dashboard__options" data-opt="weekly">Weekly</button>
+            </li>
+            <li>
+              <button class="dashboard__options" data-opt="monthly">Monthly</button>
+            </li>
+          </ul>
+        </section>
+
+        <section class="dashboard__stats-container">
+          <div class="dashboard__stats-card" data-stat-card="work">
+            <div class="dashboard__stats-bg" aria-hidden="true">
+              <img src="assets/images/icon-work.svg">
+            </div>
+
+            <header class="dashboard__stats-header">
+              <h2 class="dashboard__stats-name">Work</h2>
+
+              <button class="dashboard__stats-options">
+                <img src="assets/images/icon-ellipsis.svg" alt="More Options">
+              </button>
+            </header>
+
+            <div class="dashboard__stats-content">
+              <h3 class="dashboard__stats-time">--</h3>
+
+              <p class="dashboard__stats-prev-time">--<span>--</span></p>
+            </div>
+          </div>
+
+          <div class="dashboard__stats-card" data-stat-card="play">
+            <div class="dashboard__stats-bg" aria-hidden="true">
+              <img src="assets/images/icon-play.svg">
+            </div>
+
+            <header class="dashboard__stats-header">
+              <h2 class="dashboard__stats-name">Play</h2>
+
+              <button class="dashboard__stats-options">
+                <img src="assets/images/icon-ellipsis.svg" alt="More Options">
+              </button>
+            </header>
+
+            <div class="dashboard__stats-content">
+              <h3 class="dashboard__stats-time">--</h3>
+
+              <p class="dashboard__stats-prev-time">--<span>--</span></p>
+            </div>
+          </div>
+
+          <div class="dashboard__stats-card" data-stat-card="study">
+            <div class="dashboard__stats-bg" aria-hidden="true">--
+              <img src="assets/images/icon-study.svg">
+            </div>
+
+            <header class="dashboard__stats-header">
+              <h2 class="dashboard__stats-name">Study</h2>
+
+              <button class="dashboard__stats-options">
+                <img src="assets/images/icon-ellipsis.svg" alt="More Options">
+              </button>
+            </header>
+
+            <div class="dashboard__stats-content">
+              <h3 class="dashboard__stats-time">--</h3>
+
+              <p class="dashboard__stats-prev-time">--<span>--</span></p>
+            </div>
+          </div>
+
+          <div class="dashboard__stats-card" data-stat-card="exercise">
+            <div class="dashboard__stats-bg" aria-hidden="true">
+              <img src="assets/images/icon-exercise.svg">
+            </div>
+
+            <header class="dashboard__stats-header">
+              <h2 class="dashboard__stats-name">Exercise</h2>
+
+              <button class="dashboard__stats-options">
+                <img src="assets/images/icon-ellipsis.svg" alt="More Options">
+              </button>
+            </header>
+
+            <div class="dashboard__stats-content">
+              <h3 class="dashboard__stats-time">--</h3>
+
+              <p class="dashboard__stats-prev-time">--<span>--</span></p>
+            </div>
+          </div>
+
+          <div class="dashboard__stats-card" data-stat-card="social">
+            <div class="dashboard__stats-bg" aria-hidden="true">
+              <img src="assets/images/icon-social.svg">
+            </div>
+
+            <header class="dashboard__stats-header">
+              <h2 class="dashboard__stats-name">Social</h2>
+
+              <button class="dashboard__stats-options">
+                <img src="assets/images/icon-ellipsis.svg" alt="More Options">
+              </button>
+            </header>
+
+            <div class="dashboard__stats-content">
+              <h3 class="dashboard__stats-time">--</h3>
+
+              <p class="dashboard__stats-prev-time">--<span>--</span></p>
+            </div>
+          </div>
+
+          <div class="dashboard__stats-card" data-stat-card="selfCare">
+            <div class="dashboard__stats-bg" aria-hidden="true">
+              <img src="assets/images/icon-self-care.svg">
+            </div>
+
+            <header class="dashboard__stats-header">
+              <h2 class="dashboard__stats-name">Self Care</h2>
+
+              <button class="dashboard__stats-options">
+                <img src="assets/images/icon-ellipsis.svg" alt="More Options">
+              </button>
+            </header>
+
+            <div class="dashboard__stats-content">
+              <h3 class="dashboard__stats-time">--</h3>
+
+              <p class="dashboard__stats-prev-time">--<span>--</span></p>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Christian Lhie Besmanos</a>.
+      </footer>
+
+      <script src="scripts.js"></script>
+    </main>
+  </body>
+</html>
