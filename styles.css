@@ -259,6 +259,23 @@ Background color for each stat cards' background div
 
 /* 
 
+Styles for the footer (attribution)
+
+*/
+
+.attribution { 
+  margin-top: 1.6rem;
+
+  color: white;
+  font-size: 11px; text-align: center; 
+}
+.attribution a { 
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
+
+/* 
+
 Various media queries for the dashboard components and its children,
 inlcudes height, font-sizes, and display properties
 
